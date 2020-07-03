@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 17:08:29 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/01 17:13:28 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/07/03 20:35:47 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t ft_strlen(const char *s)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (s[i] != '\0')
-    i++;
+        i++;
     return (i);
 }
