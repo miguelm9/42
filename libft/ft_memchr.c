@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmartin <mmartin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 10:39:19 by mmartin           #+#    #+#             */
-/*   Updated: 2020/07/01 10:57:43 by mmartin          ###   ########.fr       */
+/*   Updated: 2020/07/03 18:56:56 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,28 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	*pointy;
+	unsigned char	*str;
+	unsigned char	character;
 
+	str = (unsigned char *)s;
+	character = (unsigned char)c;
 	i = 0;
-	pointy = (unsigned char *)s;
 	while (i < n)
 	{
-		if (c == ((char *)s)[i])
+		if (*str == character)
 		{
-			return ((void *)&s[i]);
+			return (str);
 		}
+		str++;
 		i++;
 	}
 	return (NULL);
+}
+
+int main(void)
+{
+	printf("%p\n", memchr("hola caracol", 'c', 13));
+	printf("%p\n", ft_memchr("hola caracol", 'c', 13));
+	
+	return (0);
 }

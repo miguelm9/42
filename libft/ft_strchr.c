@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/01 08:54:22 by mmartin           #+#    #+#             */
-/*   Updated: 2020/07/03 19:32:23 by nerviosus        ###   ########.fr       */
+/*   Created: 2020/07/03 18:44:16 by nerviosus         #+#    #+#             */
+/*   Updated: 2020/07/03 19:32:00 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-void	ft_bzero(void *s, size_t n)
+char *ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char	*str;
+	unsigned char	character;
 
-	i = 0;
-	while (i < n)
-	{
-		((char *)s)[i] = 0;
-		i++;
-	}
+	str = (char *)s;
+	character = (unsigned char)c;
+    while (*str != '\0')
+    {
+        if (*str == character)
+            return (str);
+        str++;
+    }
+    return (NULL);
 }

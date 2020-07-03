@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/01 17:13:40 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/03 18:41:03 by nerviosus        ###   ########.fr       */
+/*   Created: 2020/07/03 19:09:09 by nerviosus         #+#    #+#             */
+/*   Updated: 2020/07/03 19:37:29 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-unsigned int    ft_strlcpy(char *dest, char *src, unsigned int size)
+char    *ft_strrchr(const char *s, int c)
 {
-    unsigned int i;
-    unsigned int j;
- 
-    j = 0;
-    while (src[j] != '\0')
+    int             i;
+    int             posicion;
+    char            *str;
+    unsigned char   character;
+
+    i = 0;
+    posicion = 0;
+    str = (char *) s;
+    character = (char) c;
+    while (*str != '\0')
     {
-        j++;
+        if (*str == character)
+            posicion = i;
+        str++;
+        i++;
     }
-    if (size != 0)
+    i = 0;
+    str = (char *) s;
+    while (i < posicion)
     {
-        i = 0;
-        while (i < (size - 1) && src[i] != '\0')
-        {
-            dest[i] = src[i];
-            i++;
-        }
-        dest[i] = '\0';
+        i++;
+        str++;
     }
-    return (j);
+    return (str);
 }

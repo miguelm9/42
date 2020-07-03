@@ -1,3 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/03 18:34:25 by nerviosus         #+#    #+#             */
+/*   Updated: 2020/07/03 18:43:38 by nerviosus        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+
+unsigned int g_i;
+
 unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
 {
     unsigned int t;
