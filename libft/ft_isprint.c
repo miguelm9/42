@@ -15,7 +15,6 @@
 
 int ft_isprint(int c)
 {
-	//no sé si el 127 (DEL) es printable. 
 	return ((c >= 0 && c <= 31) || c == 127) ? 0 : 1;
 }
 
