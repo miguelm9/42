@@ -6,39 +6,40 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 18:34:25 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/03 18:43:38 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/07/05 18:43:18 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-unsigned int g_i;
+
 
 unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
 {
     unsigned int t;
     unsigned int p;
     unsigned int m;
+    unsigned int i;
  
-    g_i = -1;
+    i = -1;
     t = 0;
     p = -1;
-    while (dest[++g_i] != 0)
+    while (dest[++i] != 0)
     {
     }
-    m = g_i;
+    m = i;
     while (src[++p] != 0)
     {
     }
-    while (src[t] != 0 && (g_i < size - 1) && (size != 0))
+    while (src[t] != 0 && (i < size - 1) && (size != 0))
     {
-        dest[g_i] = src[t];
-        g_i++;
+        dest[i] = src[t];
+        i++;
         t++;
     }
-    dest[g_i] = 0;
-    if (size < g_i)
+    dest[i] = 0;
+    if (size < i)
         return (size + p);
     else
         return (m + p);
