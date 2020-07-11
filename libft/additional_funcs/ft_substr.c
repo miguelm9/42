@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/05 11:03:18 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/05 11:50:15 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/07/11 11:53:18 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 int main(void)
 {
-	printf("%s\n", ft_substr("Hola que tal!", 5, 3));
-	printf("Size: %ld\n", sizeof(ft_substr("Hola que tal!", 5, 3)));
+	printf("%s\n", ft_substr("Hola que", 5, 1));
+	printf("Size: %ld\n", sizeof(ft_substr("Hola que", 5, 1)));
 	return (9);
 }
