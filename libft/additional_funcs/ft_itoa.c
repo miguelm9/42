@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 12:05:06 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/22 18:01:21 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/07/22 18:04:41 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,6 @@ char *ft_itoa(int n)
 	if(n < 0)
 		str_num = (char *) malloc((lenHelper(x)+2)*sizeof(char));
 	str_num = (char *) malloc((lenHelper(x)+1)*sizeof(char));
-	// if (n < 10)
-	// 	printf("%d", n);
-	// while (n >= 10)
-	// {
-	// 	printf("%d", n/10);
-	// 	n = n%10;
-	// 	ft_itoa(n);	
-	// }
-
 	for (int i = 0; i < lenHelper(x); i++)
 	{
 		if (n < 10)
