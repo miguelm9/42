@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/30 18:44:57 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/30 18:52:38 by nerviosus        ###   ########.fr       */
+/*   Created: 2020/07/30 18:54:21 by nerviosus         #+#    #+#             */
+/*   Updated: 2020/07/30 18:56:25 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
-
-	while (s[i] != '\0')
+	if (n < 0)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		ft_putchar_fd('-', fd);
+		n = -n;
 	}
-	s[i] = '\n';
+	if (n < 10)
+		ft_putchar_fd('0' + n, fd);
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }
