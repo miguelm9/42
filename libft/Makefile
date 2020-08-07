@@ -6,66 +6,45 @@
 #    By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/31 14:18:47 by nerviosus         #+#    #+#              #
-#    Updated: 2020/08/07 12:22:35 by nerviosus        ###   ########.fr        #
+#    Updated: 2020/08/07 20:56:26 by nerviosus        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft.a
-CFLAGS		= -Wall -Werror -Wextra -I. -c
-FILES		= ft_atoi.c \
-				ft_bzero.c \
-				ft_calloc.c \
-				ft_isalnum.c \
-				ft_isalpha.c \
-				ft_isascii.c \
-				ft_isdigit.c \
-				ft_isprint.c \
-				ft_isprint.c \
-				ft_memccpy.c \
-				ft_memchr.c \
-				ft_memcmp.c \
-				ft_memcpy.c \
-				ft_memmove.c \
-				ft_memset.c \
-				ft_strcat.c \
-				ft_.strchr.c \
-				ft_strdup.c \
-				ft_strlcpy.c \
-				ft_strlen.c \
-				ft_strncmp.c \
-				ft_strnstr.c \
-				ft_strrchr.c \
-				ft_tolower.c \
-				ft_toupper.c \
-				ft_itoa.c \
-				ft_putchar_fd.c \
-				ft_putendl_fd.c \
-				ft_putnbr_fd.c \
-				ft_putstr_fd.c \
-				ft_strjoin.c \
-				ft_strmapi.c \
-				ft_strtrim.c \
-				ft_substr.c \
-OBJ			= $(FILES:%.c=%.o)
+
+FLAG = -Wall -Wextra -Werror
+
+NAME = libft.a
+
+SRC = ft_atoi.c \
+	  ft_bzero.c \
+	  ft_isalnum.c \
+	  ft_isalpha.c \
+	  ft_isascii.c \
+	  ft_isdigit.c \
+	  ft_isprint.c \
+	  ft_itoa.c \
+
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-copy:
-	cp -f libft/libc/*.c .
-	cp -f libft/additional_funcs/*.c .
-
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@echo "$(NAME) created"
+	@ranlib $(NAME)
+	@echo "$(NAME) indexed"
 
-$(OBJ): $(FILES)
-	gcc $(CFLAGS) $(FILES)
+%.o: %.c
+	@gcc $(FLAG) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo "OBJ deleted"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(NAME) deleted"
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: all, clean, fclean, re
