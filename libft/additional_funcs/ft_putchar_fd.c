@@ -6,13 +6,13 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 18:24:07 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/30 18:37:39 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/07 17:11:37 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

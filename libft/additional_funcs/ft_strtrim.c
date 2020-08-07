@@ -6,32 +6,31 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/05 19:03:58 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/05 19:14:40 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/07 17:17:29 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    size_t i;
-
-    i = 0;
-    while (s[i] != '\0')
-        i++;
-    return (i);
-}
-
-
-char *ft_strtrim(char const *s1, char const *set)
-{
-	char *str;
-	int i;
-	int posiciones[ft_strlen(set)];
+	size_t i;
 
 	i = 0;
-	str = (char *) malloc (sizeof(str) * (ft_strlen(s1) - ft_strlen(set) + 1));
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	int		i;
+	int		posiciones[ft_strlen(set)];
+
+	i = 0;
+	str = (char *)malloc(sizeof(str) * (ft_strlen(s1) - ft_strlen(set) + 1));
 	if (str == NULL)
 		return (NULL);
 	while (*s1 != '\0')
@@ -39,13 +38,6 @@ char *ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (str[i] != '\0')
 	{
-
 		i++;
 	}
-}
-
-int main(void)
-{
-
-	return (0);
 }
