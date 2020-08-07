@@ -6,7 +6,7 @@
 #    By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/31 14:18:47 by nerviosus         #+#    #+#              #
-#    Updated: 2020/07/31 15:31:06 by nerviosus        ###   ########.fr        #
+#    Updated: 2020/08/07 12:22:35 by nerviosus        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,3 +50,22 @@ OBJ			= $(FILES:%.c=%.o)
 
 all: $(NAME)
 
+copy:
+	cp -f libft/libc/*.c .
+	cp -f libft/additional_funcs/*.c .
+
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
+
+$(OBJ): $(FILES)
+	gcc $(CFLAGS) $(FILES)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: clean fclean all re

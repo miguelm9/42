@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 10:39:19 by mmartin           #+#    #+#             */
-/*   Updated: 2020/07/03 18:56:56 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/07 15:26:44 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,4 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 	}
 	return (NULL);
-}
-
-int main(void)
-{
-	printf("%p\n", memchr("hola caracol", 'c', 13));
-	printf("%p\n", ft_memchr("hola caracol", 'c', 13));
-	
-	return (0);
 }

@@ -6,43 +6,13 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 19:37:58 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/11 12:00:44 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/07 15:50:21 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-
-size_t ft_strlen(const char *s)
-{
-    size_t i;
-
-    i = 0;
-    while (s[i] != '\0')
-    i++;
-    return (i);
-}
-
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (((char *)s1)[i] != ((char *)s2)[i])
-		{
-			if (((char *)s1)[i] < ((char *)s2)[i])
-				return (-1);
-			else
-				return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
+#include <libft.h>
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
@@ -58,9 +28,4 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		s1++;
 	}
 	return (NULL);
-}
-int main(void)
-{
-	printf("%s\n", ft_strnstr("Holacaracola", "cara", 13));
-	return (0);
 }

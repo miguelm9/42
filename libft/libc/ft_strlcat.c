@@ -6,25 +6,24 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 18:34:25 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/07/05 18:43:18 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/07 15:33:49 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-
-
-unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
     unsigned int t;
     unsigned int p;
     unsigned int m;
     unsigned int i;
- 
+   
     i = -1;
     t = 0;
     p = -1;
+
     while (dest[++i] != 0)
     {
     }
