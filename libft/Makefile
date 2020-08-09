@@ -6,7 +6,7 @@
 #    By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/31 14:18:47 by nerviosus         #+#    #+#              #
-#    Updated: 2020/08/09 00:31:16 by nerviosus        ###   ########.fr        #
+#    Updated: 2020/08/10 01:34:09 by nerviosus        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,10 @@ SRC = ft_atoi.c \
 	  ft_putnbr_fd.c \
 	  ft_putstr_fd.c \
 	  ft_strjoin.c \
-	  ft_strmapi.c\
+	  ft_strmapi.c \
 	  ft_strtrim.c \
 	  ft_substr.c \
+	  ft_split.c \
 
 
 OBJ = $(SRC:.c=.o)

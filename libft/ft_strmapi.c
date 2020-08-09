@@ -5,35 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/22 18:05:31 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/08/07 17:16:09 by nerviosus        ###   ########.fr       */
+/*   Created: 2020/08/10 01:52:21 by nerviosus         #+#    #+#             */
+/*   Updated: 2020/08/10 01:52:22 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+static void	*ft_memalloc(size_t size)
 {
-	size_t i;
+	void *mem;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	mem = malloc(size);
+	if (mem == NULL)
+		return (NULL);
+	else
+		return (ft_memset(mem, 0, size));
 }
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+static char	*ft_strnew(size_t size)
 {
-	char	*str;
-	int		i;
+	return ((char*)ft_memalloc(sizeof(char) * (size + 1)));
+}
 
-	str = (char *)malloc(ft_strlen(s) + 1);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char			*new;
+	unsigned int	i;
+
+	new = ft_strnew(ft_strlen(s));
+	if (new == NULL)
+		return (NULL);
+	i = 0;
 	while (s[i] != '\0')
 	{
-		str[i] = f((unsigned int)i, s[i]);
+		new[i] = f(i, s[i]);
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (new);
 }

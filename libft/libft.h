@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 14:24:16 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/08/10 01:00:00 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/10 01:37:51 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 # define FALSE 0
 # define TRUE 1
+
+# include <stdint.h>
+# include <stddef.h>
 
 typedef unsigned char	t_byte;
 void				*ft_memset(void *dst, int data, size_t len);
@@ -44,11 +47,12 @@ int					ft_toupper(int c);
 char				*ft_itoa(int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
-void				ft_putstr_fd(char *s, int fd);
+void				ft_putnbr_fd(intmax_t n, int fd);
+void				ft_putstr_fd(char const *s, int fd);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				**ft_split(char const *s, char c);
 
 #endif
