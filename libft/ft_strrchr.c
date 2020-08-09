@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 19:09:09 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/08/07 15:52:09 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/10 01:04:56 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int				i;
-	int				posicion;
-	char			*str;
-	unsigned char	character;
+	char *last_pos;
 
-	i = 0;
-	posicion = 0;
-	str = (char *)s;
-	character = (char)c;
-	while (*str != '\0')
+	last_pos = NULL;
+	while (*s != '\0')
 	{
-		if (*str == character)
-			posicion = i;
-		str++;
-		i++;
+		if (*s == (char)c)
+			last_pos = (char*)s;
+		s++;
 	}
-	i = 0;
-	str = (char *)s;
-	while (i < posicion)
-	{
-		i++;
-		str++;
-	}
-	return (str);
+	if (*s == (char)c)
+		return ((char*)s);
+	else
+		return (last_pos);
 }

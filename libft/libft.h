@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/07 14:24:16 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/08/09 00:22:34 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/10 01:00:00 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define FALSE 0
 # define TRUE 1
 
+typedef unsigned char	t_byte;
 void				*ft_memset(void *dst, int data, size_t len);
 int					ft_atoi(const char *nptr);
 void				ft_bzero(void *s, size_t n);

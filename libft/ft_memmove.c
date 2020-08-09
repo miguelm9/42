@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 09:30:50 by mmartin           #+#    #+#             */
-/*   Updated: 2020/08/07 15:31:09 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/10 01:01:56 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,28 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
+	char *strsrc;
+	char *strdst;
 
-	i = 0;
-	if (dst == NULL)
-		return (NULL);
-	while (i < len)
+	strsrc = (char*)src;
+	strdst = (char*)dst;
+	if (strsrc < strdst)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i++;
+		strsrc = strsrc + len - 1;
+		strdst = strdst + len - 1;
+		while (len > 0)
+		{
+			*strdst-- = *strsrc--;
+			len--;
+		}
+	}
+	else
+	{
+		while (len > 0)
+		{
+			*strdst++ = *strsrc++;
+			len--;
+		}
 	}
 	return (dst);
 }

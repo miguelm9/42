@@ -6,7 +6,7 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 21:29:03 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/08/07 14:20:53 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/10 00:53:39 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int x;
-	int is_neg;
+	int i;
+	int nbr;
+	int negative;
 
-	is_neg = 0;
-	x = 0;
-	while (*nptr == '\f' || *nptr == '\n' || *nptr == '\r'
-	|| *nptr == '\t' || *nptr == '\v' || *nptr == ' ')
-		++nptr;
-	if (*nptr == '-')
+	nbr = 0;
+	negative = 0;
+	i = 0;
+	while ((nptr[i] == '\n') || (nptr[i] == '\t') || (nptr[i] == '\v') ||
+			(nptr[i] == ' ') || (nptr[i] == '\f') || (nptr[i] == '\r'))
+		i++;
+	if (nptr[i] == '-')
+		negative = 1;
+	if (nptr[i] == '+' || nptr[i] == '-')
+		i++;
+	while (nptr[i] && (nptr[i] >= '0') && (nptr[i] <= '9'))
 	{
-		is_neg = 1;
-		nptr++;
+		nbr *= 10;
+		nbr += (int)nptr[i] - '0';
+		i++;
 	}
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		x = x * 10 + (*nptr - 48);
-		++nptr;
-	}
-	return (is_neg ? (-x) : x);
+	if (negative == 1)
+		return (-nbr);
+	else
+		return (nbr);
 }
