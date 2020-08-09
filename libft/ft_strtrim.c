@@ -6,22 +6,13 @@
 /*   By: nerviosus <nerviosus@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/05 19:03:58 by nerviosus         #+#    #+#             */
-/*   Updated: 2020/08/09 00:32:23 by nerviosus        ###   ########.fr       */
+/*   Updated: 2020/08/10 00:43:52 by nerviosus        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
